@@ -37,5 +37,11 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.Use(async (context, next) =>
+{
+    Console.WriteLine("Costume middleware'dan salom!");
+    await next();
+    Console.WriteLine("Costume middleware'dan xayr!");
+});
 
 app.Run();
