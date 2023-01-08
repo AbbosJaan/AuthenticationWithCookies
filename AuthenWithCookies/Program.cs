@@ -44,4 +44,6 @@ app.Use(async (context, next) =>
     Console.WriteLine("Costume middleware'dan xayr!");
 });
 
+app.MapGet("/notaccess", () => "This site cann't support unautorized users");
+
 app.Run();
